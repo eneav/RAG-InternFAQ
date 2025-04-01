@@ -56,7 +56,6 @@ python main.py
 - [LangChain](https://www.langchain.com/)
 - [OpenAI GPT](https://platform.openai.com/)
 - [FAISS (Meta)](https://github.com/facebookresearch/faiss)
-- [Python](https://www.python.org/)
 
 
 ## Eigene CSV hochladen
