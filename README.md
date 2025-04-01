@@ -1,70 +1,76 @@
+# RAG-Intern-FAQ
 
-#  RAG-Intern-FAQ (LangChain + OpenAI + FAISS)
+Dieses Projekt stellt eine lokale Frage-Antwort-Anwendung bereit, die auf einem RAG-Ansatz (Retrieval-Augmented Generation) basiert. Die Datenbasis wird über eine CSV-Datei definiert, welche in eine FAISS-Vektordatenbank eingebunden wird. Als Sprachmodell wird ein GPT-Modell von OpenAI genutzt.
 
-Dieses Projekt demonstriert ein Retrieval-Augmented Generation (RAG) System auf Basis von LangChain, OpenAI und FAISS. Es beantwortet Fragen auf Grundlage einer lokal vektorisierten Wissensdatenbank (basierend auf CSV-Inhalten).
+## Funktionsweise
 
-## Features
-- Embedding-basierte Ähnlichkeitssuche (FAISS)
-- GPT-Modell (z. B. GPT-3.5 oder GPT-4) über `.env` steuerbar
-- Lokale Verarbeitung, kein Chroma oder Cloud-Zwang
+Das System durchsucht eine vektorisierte Datenbank nach den relevantesten Dokumenten und übergibt diese an ein Sprachmodell, das auf Grundlage dieser Informationen eine Antwort generiert.
 
+## Aufbau
 
-## Setup
+- Vektorbasierte Ähnlichkeitssuche mit FAISS  
+- Einbindung eines GPT-Modells über die OpenAI API  
+- Konfiguration über `.env`-Datei  
+- Lokale Nutzung ohne Cloud-Datenbank (Chroma wird nicht verwendet)  
+- Modularer Aufbau über Python-Skripte  
 
-1. Virtuelle Umgebung aktivieren (falls noch nicht vorhanden erstellen):
-```bash
-python -m venv .venv
-.\.venv\Scripts\activate
-```
+## Einrichtung
+
+1. Virtuelle Umgebung erstellen und aktivieren:
+   ```bash
+   python -m venv .venv
+   .\.venv\Scripts\activate
+   ```
 
 2. Abhängigkeiten installieren:
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-3. `.env` anlegen (basierend auf `.env.example`) und OpenAI API Key + Modell definieren:
-```env
-OPENAI_API_KEY=your-key-here
-GPT_MODEL=gpt-3.5-turbo
-```
+3. Umgebungsvariablen definieren (auf Basis von `.env.example`):
+   ```env
+   OPENAI_API_KEY=your-openai-key
+   GPT_MODEL=gpt-3.5-turbo
+   ```
 
-##  Nutzung
+## Nutzung
 
-### Datenbank aus CSV-Datei erzeugen:
-```bash
-python create_database.py
-```
+1. Datenbank aus CSV-Datei erstellen:
+   ```bash
+   python create_database.py
+   ```
 
-### Eine Frage stellen:
-```bash
-python main.py
-```
+2. Anwendung starten:
+   ```bash
+   python main.py
+   ```
 
-> Alternativ kann man `query_data.py` direkt ausführen und eine Frage über die Kommandozeile mitgeben.
+## Eigene Daten einbinden
+
+Um eigene Fragen und Antworten zu verwenden, erstelle eine Datei unter `data/` mit folgendem Aufbau:
+
+| Fragen            | Antworten                |
+|------------------|--------------------------|
+| Beispiel-Frage 1 | Beispiel-Antwort 1       |
+| Beispiel-Frage 2 | Beispiel-Antwort 2       |
+
+Die CSV-Datei sollte zwei Spalten mit den Titeln **Fragen** und **Antworten** enthalten.
 
 ## Projektstruktur
 
-- `create_database.py` – Erstellt die FAISS-Datenbank aus CSV
-- `query_data.py` – Führt eine vektorbasierte Suche durch und holt GPT-Antworten
-- `main.py` – Einstiegspunkt zum Testen
-- `data/` – Enthält CSV-Dateien (nicht im Repo enthalten)
-- `faiss_index/` – Persistente Vektordatenbank (nicht im Repo enthalten)
-- `.env.example` – Vorlage für Konfigurationswerte 
+- `create_database.py` – Erstellt die FAISS-Datenbank  
+- `query_data.py` – Vektorbasierte Suche und Antwortgenerierung  
+- `main.py` – Einstiegspunkt zur Nutzung  
+- `data/` – CSV-Dateien mit Fragen und Antworten  
+- `faiss_index/` – Persistente Vektordatenbank  
+- `.env.example` – Vorlage für Umgebungsvariablen  
 
-##  Technologien
+## Hinweis
 
-- [LangChain](https://www.langchain.com/)
-- [OpenAI GPT](https://platform.openai.com/)
-- [FAISS (Meta)](https://github.com/facebookresearch/faiss)
+- `sourcedata01_fixed.csv` ist ein internes Beispiel.  
+- `.env`, FAISS-Index und CSV-Dateien können bei Bedarf per `.gitignore` vom Repository ausgeschlossen werden.  
 
+## Anforderungen
 
-## Eigene CSV hochladen
-
-Um eigene Daten zu verwenden, lege eine CSV-Datei im Ordner `data/` ab. Diese sollte die folgenden zwei Spalten enthalten:
-
-| Fragen                        | Antworten                                                |
-|------------------------------|-----------------------------------------------------------|
-| Wie melde ich mich krank?    | Krankmeldungen bis 9 Uhr per Telefon oder E-Mail melden. |
-| Wie viel Urlaub habe ich?    | 30 Urlaubstage im Jahr laut Vertrag.                     |
-
-
+- Python 3.10 oder höher  
+- OpenAI API-Zugang
