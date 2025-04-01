@@ -45,7 +45,7 @@ Das System durchsucht eine vektorisierte Datenbank nach den relevantesten Dokume
    python main.py
    ```
 
-![Beispielausgabe](img/image.png)
+![Beispielausgabe](image.png)
 
 ## Eigene Daten einbinden
 
