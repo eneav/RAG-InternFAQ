@@ -7,7 +7,7 @@ Dieses Projekt demonstriert ein Retrieval-Augmented Generation (RAG) System auf 
 - Embedding-basierte Ähnlichkeitssuche (FAISS)
 - GPT-Modell (z. B. GPT-3.5 oder GPT-4) über `.env` steuerbar
 - Lokale Verarbeitung, kein Chroma oder Cloud-Zwang
-- Unterstützung für `.env` und `.env.example` zur sicheren Konfiguration
+
 
 ## Setup
 
