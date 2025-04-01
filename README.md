@@ -68,6 +68,4 @@ Um eigene Daten zu verwenden, lege eine CSV-Datei im Ordner `data/` ab. Diese so
 | Wie melde ich mich krank?    | Krankmeldungen bis 9 Uhr per Telefon oder E-Mail melden. |
 | Wie viel Urlaub habe ich?    | 30 Urlaubstage im Jahr laut Vertrag.                     |
 
-> Hinweis: Diese Datei wird **nicht im Repository gespeichert**. Sie ist in `.gitignore` ausgeschlossen.
 
->>>>>>> 38213f0 (Removed sensitive CSV and added to .gitignore)
