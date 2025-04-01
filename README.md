@@ -1,10 +1,13 @@
-# RAG-Intern-FAQ
+# Interne Demo: RAG-FAQ für OD
 
 Dieses Projekt stellt eine lokale Frage-Antwort-Anwendung bereit, die auf einem RAG-Ansatz (Retrieval-Augmented Generation) basiert. Die Datenbasis wird über eine CSV-Datei definiert, welche in eine FAISS-Vektordatenbank eingebunden wird. Als Sprachmodell wird ein GPT-Modell von OpenAI genutzt.
 
+**Hinweis:** Hierbei wird FAISS statt Chroma verwendet, da es lokal einfacher einzurichten ist, weniger Ressourcen braucht und für eine schlanke, schnelle Demo vollkommen ausreicht
+
+
 ## Funktionsweise
 
-Das System durchsucht eine vektorisierte Datenbank nach den relevantesten Dokumenten und übergibt diese an ein Sprachmodell, das auf Grundlage dieser Informationen eine Antwort generiert.
+Das system durchsucht eine vektorisierte Datenbank nach den relevantesten Dokumenten und übergibt diese an ein Sprachmodell, das auf Grundlage dieser Informationen eine Antwort generiert.
 
 ## Aufbau
 
@@ -22,16 +25,19 @@ Das System durchsucht eine vektorisierte Datenbank nach den relevantesten Dokume
    .\.venv\Scripts\activate
    ```
 
-2. Abhängigkeiten installieren:
+2. Abhängigkeiten/requirements installieren:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Umgebungsvariablen definieren (auf Basis von `.env.example`):
+3. Umgebungsvariablen definieren (basierend von `.env.example`):
    ```env
    OPENAI_API_KEY=your-openai-key
    GPT_MODEL=gpt-3.5-turbo
    ```
+> HINWEIS: In der `.env`-datei ist `gpt-3.5-turbo` hinterlegt.  
+> Ich habe es gewählt, da es für einfache Textanfragen wie FAQ-Antworten schnell und effizient(und am günstigsten je token)ist
+
 
 ## Nutzung
 
@@ -67,10 +73,6 @@ Die CSV-Datei sollte zwei Spalten mit den Titeln **Fragen** und **Antworten** en
 - `faiss_index/` – Persistente Vektordatenbank  
 - `.env.example` – Vorlage für Umgebungsvariablen  
 
-## Hinweis
-
-- `sourcedata01_fixed.csv` ist ein internes Beispiel.  
-- `.env`, FAISS-Index und CSV-Dateien können bei Bedarf per `.gitignore` vom Repository ausgeschlossen werden.  
 
 ## Anforderungen
 
