@@ -14,7 +14,7 @@ Dieses Projekt demonstriert ein Retrieval-Augmented Generation (RAG) System auf 
 1. Virtuelle Umgebung aktivieren (falls noch nicht vorhanden erstellen):
 ```bash
 python -m venv .venv
-.\.venv\Scriptsctivate
+.\.venv\Scripts\activate
 ```
 
 2. Abhängigkeiten installieren:
