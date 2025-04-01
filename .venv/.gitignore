@@ -1,0 +1,6 @@
+# Verstecke sensible Dateien
+.env
+__pycache__/
+faiss_index/
+.vscode/
+RAG_FAQ_Schritt_fuer_Schritt_Anleitung.pdf
