@@ -1,8 +1,8 @@
 # Interne Demo: RAG-FAQ für OD
 
-Dieses Projekt stellt eine lokale Frage-Antwort-Anwendung bereit, die auf einem RAG-Ansatz (Retrieval-Augmented Generation) basiert. Die Datenbasis wird über eine CSV-Datei definiert, welche in eine FAISS-Vektordatenbank eingebunden wird. Als Sprachmodell wird ein GPT-Modell von OpenAI genutzt.
+Dieses Projekt ist eine lokale Frage-Antwort-Anwendung auf Basis des RAG-Ansatzes (Retrieval-Augmented Generation). Die Daten aus einer CSV-Datei werden in einer FAISS-Vektordatenbank gespeichert, die OpenAI-API (GPT-3.5-Modell) wird zur Generierung der Antworten verwendet.
 
-**Hinweis:** Hierbei wird FAISS statt Chroma verwendet, da es lokal einfacher einzurichten ist, weniger Ressourcen braucht und für eine schlanke, schnelle Demo vollkommen ausreicht
+**Hinweis:** Hierbei wird FAISS statt ChromaDB verwendet, da es lokal einfacher einzurichten ist, weniger Ressourcen braucht und für eine schlanke, schnelle Demo vollkommen ausreicht
 
 
 ## Funktionsweise
