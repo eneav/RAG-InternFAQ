@@ -1,23 +1,21 @@
-# RAG-Projekt: Quickstart & Fehlerbehebung (Nicht im Repo einchecken!)
 
-Dieses Dokument dient dir als persönliche Anleitung, falls du das Projekt frisch startest oder ein Fehler auftritt.
+ 2. Virtuelle Umgebung aktivieren 
 
-------------------------------------------------------------
- 1. Terminal öffnen und ins Projektverzeichnis wechseln:
-cd "C:/own projects/RAG-Modell"
-
- 2. Virtuelle Umgebung aktivieren (nur bei Windows):
 .\.venv\Scripts\activate
 
  3. API-Key prüfen (.env Datei)
-- Existiert die Datei `.env`?
-- Ist `OPENAI_API_KEY=sk-...` korrekt eingetragen?
-  (Keine Anführungszeichen, keine Leerzeichen!)
 
- 4. Falls nötig: Pakete installieren
+- Existiert die Datei `.env`?
+
+- Ist key korrekt eingetragen?
+
+
+ 4. Falls nötig --> reqs installieren
+
 pip install -r requirements.txt
 
- 5. Optional: Datenbank neu erstellen (wenn FAISS gelöscht wurde oder neue Daten)
+ 5. Optional: Datenbank neu erstellen (nur falls  FAISS gelöscht wurde oder neue Daten)
+ 
 python create_database.py
 
  6. Starten des Programms:
