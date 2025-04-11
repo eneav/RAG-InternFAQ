@@ -1,6 +1,2 @@
-# Verstecke sensible Dateien
-.env
-__pycache__/
-faiss_index/
-.vscode/
-RAG_FAQ_Schritt_fuer_Schritt_Anleitung.pdf
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
