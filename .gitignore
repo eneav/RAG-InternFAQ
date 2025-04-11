@@ -1,12 +1,10 @@
-.venv/
-
+.venv
 
 .env
 
 
 
 
-data/*.csv
+data
 
-.vscode/
-
+.vscode
