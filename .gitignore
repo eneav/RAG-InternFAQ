@@ -3,14 +3,9 @@
 
 .env
 
-# Cache / Sonstiges
-__pycache__/
-*.pyc
 
-# FAISS Index
-faiss_index/
 
-# CSV-Daten
+
 data/*.csv
 
 .vscode/
