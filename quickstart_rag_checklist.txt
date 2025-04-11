@@ -21,17 +21,4 @@ python create_database.py
  6. Starten des Programms:
 python main.py
 
-------------------------------------------------------------
- Hinweise bei Fehlern:
 
- Fehler: "invalid_api_key"
-→ Key in der `.env` ist falsch oder nicht geladen → `.env` prüfen
-
- Fehler: `.venv` nicht gefunden
-→ Virtuelle Umgebung erstellen mit:
-python -m venv .venv
-
- Fehler: FAISS Index nicht vorhanden
-→ `create_database.py` ausführen
-
-------------------------------------------------------------

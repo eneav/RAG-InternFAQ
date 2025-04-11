@@ -19,7 +19,7 @@ def generate_data_store():
 def load_documents():
     df = pd.read_csv(DATA_PATH)
     if "Fragen" not in df.columns or "Antworten" not in df.columns:
-        raise ValueError("CSV muss Spalten 'Fragen' und 'Antworten' enthalten")
+        raise ValueError("CSV muss die spalten 'Fragen' und 'Antworten' enthalten")
 
     return [Document(page_content=row["Antworten"], metadata={"Frage": row["Fragen"]}) for _, row in df.iterrows()]
 
